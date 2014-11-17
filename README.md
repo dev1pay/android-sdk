@@ -350,19 +350,19 @@ b.Thay đổi tiêu đề cho các hình thức thanh toán
 
 - Đổi tên tiêu đề Thẻ cào:
 
-setTitleCardCharging(Tiêu đề);
+<code>setTitleCardCharging(Tiêu đề);</code>
 
 - Đổi tên tiêu đề Sms:
 
-setTitleSmsCharging(Tiêu đề);
+<code>setTitleSmsCharging(Tiêu đề);</code>
 
 - Đổi tên tiêu đề Sms Plus:
 
-setTitleSmsPlusCharging(Tiêu đề);
+<code>setTitleSmsPlusCharging(Tiêu đề);</code>
 
 Ví dụ:
 
-m1PaySDK.setTitleCardCharging(“Thanh toán qua thẻ cào");
+<code>m1PaySDK.setTitleCardCharging(“Thanh toán qua thẻ cào");</code>
 
 <img src="docs/13.png" width = "400"/>&nbsp;
 

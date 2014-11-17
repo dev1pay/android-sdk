@@ -1,0 +1,25 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 15b728d..f697d26 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -69,7 +69,8 @@[m [mThêm dòng sau:[m
+ [m
+ Tạo hàm loadsConfig1PaySDK(..), trong class khởi chạy dịch vụ.[m
+ [m
+[31m-<code>public void loadsConfig1PaySDK() {[m
+[32m+[m[32m```xml[m
+[32m+[m[32mpublic void loadsConfig1PaySDK() {[m
+ [m
+ m1PaySDK = new M1PaySDK(this);[m
+ [m
+[36m@@ -85,7 +86,9 @@[m [mm1PaySDK.start(new TransactionCallBack() {[m
+ [m
+  });[m
+ [m
+[31m-}</code>[m
+[32m+[m[32m}[m
+[32m+[m[32m```[m
+[32m+[m
+ 2.1.5.Gọi hiển thị giao diện thanh toán[m
+ [m
+ Thêm dòng sau vào sự kiện bấm nút thanh toán[m

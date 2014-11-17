@@ -48,13 +48,14 @@ vào.
 
 Copy các dòng sau vào file AndroidManifest.xml:
 
-<uses-permission android:name="android.permission.INTERNET" />
+```xml
+ <uses-permission android:name="android.permission.INTERNET" />
  <uses-permission android:name="android.permission.SEND_SMS" />
  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
  <uses-permission android:name="android.permission.CHANGE_W IFI_STATE"/>
  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
+```
 2.1.3.Tạo biến m1PaySDK
 
 Trong class khởi chạy dịch vụ
@@ -68,7 +69,7 @@ Thêm dòng sau:
 
 Tạo hàm loadsConfig1PaySDK(..), trong class khởi chạy dịch vụ.
 
-public void loadsConfig1PaySDK() {
+<code>public void loadsConfig1PaySDK() {
 
 m1PaySDK = new M1PaySDK(this);
 
@@ -84,7 +85,7 @@ m1PaySDK.start(new TransactionCallBack() {
 
  });
 
-}
+}</code>
 2.1.5.Gọi hiển thị giao diện thanh toán
 
 Thêm dòng sau vào sự kiện bấm nút thanh toán
@@ -302,6 +303,7 @@ m1PaySDK.setListShortCodeSmsPlus(listSmsPlus);
 <img src="docs/10.png" width = "400"/>&nbsp;
 
 f.Thay đổi nội dung sms plus
+
 <code>setExchangeOtherInformationSmsPlus(Nội dung);</code>
 
 Nhằm cấu hình nội dung sau mã sms plus đã đăng ký để
@@ -407,13 +409,18 @@ Màu chữ: Màu tiêu đề của nút, dạng hexa 7 kí tự.
 Độ cong viền: Độ cong 4 góc của nút, dạng số.
 
 Tương tự với các nút khác:
-<code>
-Sms: setColorButtonSmsCharging (…);
 
-Sms Plus: setColorButtonSmsPlusCharging (…);
+Sms: 
 
-Card: setColorButtonCardCharging(…);
- </code>
+<code>setColorButtonSmsCharging (…);</code>
+
+Sms Plus:
+
+<code>setColorButtonSmsPlusCharging (…);</code>
+
+Card:
+
+<code>setColorButtonCardCharging(…);</code>
 
 Ví dụ thay đổi định dạng nút Sms plus trên màn hình chính:
 

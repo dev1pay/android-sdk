@@ -211,17 +211,11 @@ a.Bật/tắt hình thức thanh toán(httt)
 
 Bật/tắt các httt khi hiển thị màn hình thanh toán.
 
-- Thẻ cào:
+- Thẻ cào: <code>setEnableCardCharging(lựa chọn)</code>
 
-<code> setEnableCardCharging(lựa chọn)</code>
+- Sms: <code> setEnableSmsCharging(lựa chọn)</code>
 
-- Sms:
-
-<code> setEnableSmsCharging(lựa chọn)</code>
-
-- Sms plus:
-
-<code> setEnableSmsPlusCharging(lựa chọn)</code>
+- Sms plus: <code> setEnableSmsPlusCharging(lựa chọn)</code>
 
 Ví dụ tắt httt Sms plus:
 

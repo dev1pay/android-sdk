@@ -237,7 +237,6 @@ Vinaphone, Gate:
 
 ```xml
 private M1PaySDKConstant m;
-...
 
 m = new M1PaySDKConstant();
 

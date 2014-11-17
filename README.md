@@ -472,5 +472,5 @@ Ví dụ:
 
 <img src="docs/18.png" width = "400"/>&nbsp;
 
-h. Bạn có thể tải bản đầy đủ của tài liệu hướng dẫn tích hợp tại  <a href="docs/document.pdf">đây</a>
+h. Bạn có thể tải bản đầy đủ của tài liệu hướng dẫn tích hợp tại  <a href="docs/document.pdf"?raw=true>đây</a>
 

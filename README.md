@@ -97,7 +97,7 @@ Typeface tf = Typeface.createFromAsset
 (getAssets(), "fonts/voy.ttf");
 m1PaySDK.setTextStyle(tf);
 
-<img src="docs/1.png" width = "200"/>&nbsp;
+<img src="docs/1.png" width = "400"/>&nbsp;
 
 b.Thay đổi icon cho sản phẩm
 - Đối với icon đại diện game (hình góc trên, bên
@@ -125,7 +125,7 @@ diện chính của màn hình thanh toán.
 Ví dụ:
 m1PaySDK.setAppName("Kungfu Pet");
 
-<img src="docs/3.png" width = "200"/>&nbsp;
+<img src="docs/3.png" width = "400"/>&nbsp;
 
 d.Thay đổi tên người chơi
 setAccountName(Tên người chơi)
@@ -152,7 +152,7 @@ Có hai giá trị để thiết lập ngôn ngữ:
 Ví dụ:
 m1PaySDK.setLanguage("en_US");
 
-<img src="docs/5.png" width = "200"/>&nbsp;
+<img src="docs/5.png" width = "400"/>&nbsp;
 
 2.2.3.Thiết lập thanh toán
 a.Bật/tắt hình thức thanh toán(httt)
@@ -164,7 +164,7 @@ Ví dụ tắt httt Sms plus:
 m1PaySDK.setEnableSmsPlusCharging(false);
 Lưu ý: Các httt đã được xác nhận thì mới có thể tắt/bật
 
-<img src="docs/6.png" width = "200"/>&nbsp;
+<img src="docs/6.png" width = "400"/>&nbsp;
 
 b.Thay đổi loại thẻ cào
 setListTypeCard(danh sách thẻ)
@@ -181,7 +181,7 @@ listCard.add(m.TypeCardVinaphone);
 listCard.add(m.TypeCardGate);
 m1PaySDK.setListTypeCard(listCard);
 
-<img src="docs/7.png" width = "200"/>&nbsp;
+<img src="docs/7.png" width = "400"/>&nbsp;
 
 c.Thay đổi dải mệnh giá sms
 setListTypeCard(danh sách mệnh giá sms)
@@ -197,7 +197,7 @@ listSms.add(mconstant.SMS1000);
 listSms.add(mconstant.SMS2000);
 m1PaySDK.setListShortCodeSms(listSms);
 
-<img src="docs/8.png" width = "200"/>&nbsp;
+<img src="docs/8.png" width = "400"/>&nbsp;
 
 d.Thay đổi nội dung tin nhắn sms
 setExchangeOtherInformationSms(Nội dung);
@@ -209,7 +209,7 @@ Ví dụ:
 gửi 8x38:
 m1PaySDK.setExchangeOtherInformationSms("game1 account1");
 
-<img src="docs/9.png" width = "200"/>&nbsp;
+<img src="docs/9.png" width = "400"/>&nbsp;
 
 e.Thay đổi dải mệnh giá sms plus
 setListshortCodeSmsPlus(danh sách mệnh giá);
@@ -227,7 +227,7 @@ listSmsPlus.add(mconstant.SMSPLUS2000);
 listSmsPlus.add(mconstant.SMSPLUS3000);
 m1PaySDK.setListShortCodeSmsPlus(listSmsPlus);
 
-<img src="docs/10.png" width = "200"/>&nbsp;
+<img src="docs/10.png" width = "400"/>&nbsp;
 
 f.Thay đổi nội dung sms plus
 setExchangeOtherInformationSmsPlus(Nội dung);
@@ -238,7 +238,7 @@ Ví dụ
 - cần cấu hình thông tin khác là “Game01” 9029:
 m1PaySDK.setExchangeOtherInformationSmsPlus("Game01");
 
-<img src="docs/11.png" width = "200"/>&nbsp;
+<img src="docs/11.png" width = "400"/>&nbsp;
 
 2.2.4.Thay đổi giao diện
 a.Thay đổi định dạng giao diện chung
@@ -255,7 +255,7 @@ m1PaySDK.removeInitThem(true);
 (Ví dụ: #fcf2d4)
 m1PaySDK.initTheme("#fcf2d4","#721301",“#721301",10,5);
 
-<img src="docs/12.png" width = "200"/>&nbsp;
+<img src="docs/12.png" width = "400"/>&nbsp;
 
 b.Thay đổi tiêu đề cho các hình thức thanh toán
 - Đổi tên tiêu đề Thẻ cào:
@@ -267,7 +267,7 @@ setTitleSmsPlusCharging(Tiêu đề);
 Ví dụ:
 m1PaySDK.setTitleCardCharging(“Thanh toán qua thẻ cào");
 
-<img src="docs/13.png" width = "200"/>&nbsp;
+<img src="docs/13.png" width = "400"/>&nbsp;
 
 Lưu ý:
 - Đối với trường hợp cần tạo giao diện đa ngôn ngữ (Tiếng Anh và Tiếng Việt), truy cập vào tập tin 1PaySDK Project -> res/value/
@@ -292,7 +292,7 @@ chuẩn của Android
 Ví dụ:
 m1PaySDK.setColorBackgroundTitle("#721301", "#ffffff", Typeface.defaultFromStyle
 
-<img src="docs/14.png" width = "200"/>&nbsp;
+<img src="docs/14.png" width = "400"/>&nbsp;
 
 d.Thay đổi định dạng nút thanh toán (màn hình chính)
 setColorButtonCardCharging(màu nền, màu chữ, độ cong viền)
@@ -308,7 +308,7 @@ Card: setColorButtonCardCharging(…);
 Ví dụ thay đổi định dạng nút Sms plus trên màn hình chính:
 m1PaySDK.setColorButtonCardCharging("#ffcd83", "#7b1702", 30);
 
-<img src="docs/15.png" width = "200"/>&nbsp;
+<img src="docs/15.png" width = "400"/>&nbsp;
 
 e.Thay đổi phần giới thiệu chung
 Nhằm thay đổi thông tin trong phần giới thiệu chung.
@@ -318,7 +318,7 @@ thư mục sau:
 - Màn hình dọc: res/layout
 - Màn hình ngang: res/layout-land
 
-<img src="docs/16.png" width = "200"/>&nbsp;
+<img src="docs/16.png" width = "400"/>&nbsp;
 
 f.Thay đổi phần giới thiệu httt (màn hình chi tiết)
 Nhằm thay đổi thông tin trong phần giới thiệu từng httt.
@@ -331,7 +331,7 @@ Có 3 tập tin tương ứng với 3 httt chính, bao gồm:
 - Sms Plus: layout_help_iac.xml
 - Thẻ cào: layout_help_card.xml
 
-<img src="docs/17.png" width = "200"/>&nbsp;
+<img src="docs/17.png" width = "400"/>&nbsp;
 
 g.Thay đổi định dạng nút (màn hình chi tiết)
 setBackgroundColorBtnPayment(màu nền, màu chữ, độ bo góc)
@@ -341,6 +341,6 @@ Ví dụ:
 m1PaySDK.setBackgroundColorBtnPayment("#721301",
 "#ffffff", 30);
 
-<img src="docs/18.png" width = "200"/>&nbsp;
+<img src="docs/18.png" width = "400"/>&nbsp;
 
 

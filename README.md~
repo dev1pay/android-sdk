@@ -362,7 +362,7 @@ b.Thay đổi tiêu đề cho các hình thức thanh toán
 
 Ví dụ:
 
-<code>m1PaySDK.setTitleCardCharging(“Thanh toán qua thẻ cào");<code>
+<code>m1PaySDK.setTitleCardCharging(“Thanh toán qua thẻ cào");</code>
 
 <img src="docs/13.png" width = "400"/>&nbsp;
 

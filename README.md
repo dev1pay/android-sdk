@@ -12,9 +12,7 @@ chơi, ứng dụng,…).
 
 ​1. Import SDK vào project
 
-​2. Cấu hình SDK
-
-​3. Tích hợp
+​2. Cấu hình SDK và Tích hợp
 
 **1. Tải và Import SDK vào project**
 

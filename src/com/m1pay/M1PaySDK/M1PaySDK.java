@@ -800,7 +800,7 @@ public class M1PaySDK {
 		typeCard.add(new ItemTypeCard(context.getResources().getString(R.string.choose_card_type).toString(), textStyle));
 		if (listTypeCard != null && listTypeCard.size() > 0) {
 			for (String typeStr : listTypeCard) {
-				if (OnepayUtils.checkTypeCard(context, typeStr.toLowerCase()) && !typeStr.equalsIgnoreCase("")) {
+				if (M1PaySDKUtils.checkTypeCard(context, typeStr.toLowerCase()) && !typeStr.equalsIgnoreCase("")) {
 					typeCard.add(new ItemTypeCard(upperCaseFistChar(typeStr.toLowerCase()), textStyle));
 				}
 			}
@@ -1142,7 +1142,7 @@ public class M1PaySDK {
 			if (listPricesSmsPlus != null && listPricesSmsPlus.size() > 0) {
 				for (String str : listPricesSmsPlus) {
 					str = str.trim();
-					if (!str.equals("") && OnepayUtils.checkPriceFromCodeSmsPlus(context, str)) {	
+					if (!str.equals("") && M1PaySDKUtils.checkPriceFromCodeSmsPlus(context, str)) {	
 						prices.add(new ItemTypeSmsPlus(str+ " VND", textStyle));
 					}
 				}
@@ -1309,7 +1309,7 @@ public class M1PaySDK {
 		if (listPricesSms != null && listPricesSms.size() > 0) {
 			for (String str : listPricesSms) {
 				str = str.trim();
-				if(!str.equalsIgnoreCase("") && OnepayUtils.checkPriceFromCodeSms(context, str)){
+				if(!str.equalsIgnoreCase("") && M1PaySDKUtils.checkPriceFromCodeSms(context, str)){
 					prices.add( new ItemTypeSms(str + " VND", textStyle));
 				}
 			}
@@ -1317,7 +1317,7 @@ public class M1PaySDK {
 			for (String str : shortCodes) {
 				str = str.trim();
 				if (!str.equals("")) {
-					prices.add(new ItemTypeSms(OnepayUtils.getPriceFromCode(context, str) + " VND", textStyle));
+					prices.add(new ItemTypeSms(M1PaySDKUtils.getPriceFromCode(context, str) + " VND", textStyle));
 				}
 			}
 		}
@@ -1414,7 +1414,7 @@ public class M1PaySDK {
 				if (pos > 0) {
 					String shortCode = null;
 					if (listPricesSms != null) {
-						shortCode = OnepayUtils.getShortCodeFromCode(context,selectItemPriceSms.replace(" VND", ""));
+						shortCode = M1PaySDKUtils.getShortCodeFromCode(context,selectItemPriceSms.replace(" VND", ""));
 					}
 					else{
 						shortCode = shortCodes[pos - 1];

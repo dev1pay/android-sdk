@@ -69,7 +69,8 @@ Thêm dòng sau:
 
 Tạo hàm loadsConfig1PaySDK(..), trong class khởi chạy dịch vụ.
 
-<code>public void loadsConfig1PaySDK() {
+```xml
+public void loadsConfig1PaySDK() {
 
 m1PaySDK = new M1PaySDK(this);
 
@@ -85,7 +86,9 @@ m1PaySDK.start(new TransactionCallBack() {
 
  });
 
-}</code>
+}
+```
+
 2.1.5.Gọi hiển thị giao diện thanh toán
 
 Thêm dòng sau vào sự kiện bấm nút thanh toán

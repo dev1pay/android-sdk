@@ -418,8 +418,9 @@ Sms Plus:
 
 <code>setColorButtonSmsPlusCharging (…);</code>
 
-Card: setColorButtonCardCharging(…);
-</code>
+Card:
+
+<code>setColorButtonCardCharging(…);</code>
 
 Ví dụ thay đổi định dạng nút Sms plus trên màn hình chính:
 

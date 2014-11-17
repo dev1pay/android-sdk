@@ -211,9 +211,11 @@ a.Bật/tắt hình thức thanh toán(httt)
 
 Bật/tắt các httt khi hiển thị màn hình thanh toán.
 
-- Thẻ cào: setEnableCardCharging(lựa chọn)
-- Sms: setEnableSmsCharging(lựa chọn)
-- Sms plus: setEnableSmsPlusCharging(lựa chọn)
+- Thẻ cào: <code>setEnableCardCharging(lựa chọn)</code>
+
+- Sms: <code> setEnableSmsCharging(lựa chọn)</code>
+
+- Sms plus: <code> setEnableSmsPlusCharging(lựa chọn)</code>
 
 Ví dụ tắt httt Sms plus:
 
@@ -262,15 +264,23 @@ hàng chọn để gửi tin.
 
 Ví dụ: cấu hình sms có 3 mệnh giá 500, 1000, 2000:
 
-<code>private M1PaySDKConstant mconstant;
-...
+```xml
+
+private M1PaySDKConstant mconstant;
+
 mconstant = new M1PaySDKConstant();
+
 ArrayList<String> listSms = new ArrayList<String>();
+
 listSms.add(mconstant.SMS500);
+
 listSms.add(mconstant.SMS1000);
+
 listSms.add(mconstant.SMS2000);
+
 m1PaySDK.setListShortCodeSms(listSms);
-</code>
+
+```
 
 <img src="docs/8.png" width = "400"/>&nbsp;
 
@@ -286,28 +296,41 @@ Ví dụ:
 - Mã đăng ký trên 1Pay: Andev, đầu số 8xx8.
 - Cần cấu hình nội dung tin nhắn: “Andev game1 account1”
 gửi 8x38:
-m1PaySDK.setExchangeOtherInformationSms("game1 account1");
+
+<code>m1PaySDK.setExchangeOtherInformationSms("game1 account1");</code>
 
 <img src="docs/9.png" width = "400"/>&nbsp;
 
 e.Thay đổi dải mệnh giá sms plus
-setListshortCodeSmsPlus(danh sách mệnh giá);
+
+<code>setListshortCodeSmsPlus(danh sách mệnh giá);</code>
+
 Nhằm cấu hình dải mệnh giá sms plus hiển thị cho khách
 hàng chọn để gửi tin.
+
 Ví dụ:
+
 - Sản phẩm chỉ áp dụng mệnh giá 1000, 2000, 3000 cho httt
 sms plus:
 
-<code>
+```xml
+
 private M1PaySDKConstant mconstant;
-...
+
 mconstant = new M1PaySDKConstant();
+
 ArrayList<String> listSmsPlus = new ArrayList<String>();
+
 listSmsPlus.add(mconstant.SMSPLUS1000);
+
 listSmsPlus.add(mconstant.SMSPLUS2000);
+
 listSmsPlus.add(mconstant.SMSPLUS3000);
+
 m1PaySDK.setListShortCodeSmsPlus(listSmsPlus);
-</code>
+
+```
+
 <img src="docs/10.png" width = "400"/>&nbsp;
 
 f.Thay đổi nội dung sms plus
@@ -320,7 +343,8 @@ tạo tin nhắn với nội dung phù hợp kịch bản kinh doanh.
 Ví dụ:
 - mã sms plus đã đăng ký: gametest
 - cần cấu hình thông tin khác là “Game01” 9029:
-m1PaySDK.setExchangeOtherInformationSmsPlus("Game01");
+
+<code>m1PaySDK.setExchangeOtherInformationSmsPlus("Game01");</code>
 
 <img src="docs/11.png" width = "400"/>&nbsp;
 
@@ -381,11 +405,15 @@ Ví dụ thay đổi tiêu đề thẻ cào (đa ngôn ngữ)
 và value-en/strings.xml
 <string name="card_name">Payment for card</string>
 + Bước 2: Thêm câu lệnh:
-m1PaySDK.setTitleCardCharging(this.getResources().getString(R.string.card_name));
+
+<code>m1PaySDK.setTitleCardCharging(this.getResources().getString(R.string.card_name));</code>
 
 c.Thay đổi định dạng tiêu đề (chung)
-setColorBackgroundTitle(màu nền, màu chữ, kiểu chữ đậm nhạt)
+
+<code>setColorBackgroundTitle(màu nền, màu chữ, kiểu chữ đậm nhạt)</code>
+
 Nhằm thay đổi định dạng của tiêu đề trên màn hình chính và màn hình chi tiết.
+
 Trong đó:
 
 Màu nền: Màu nền của tiêu đề, dạng màu hexa 7 chữ
@@ -418,17 +446,11 @@ Màu chữ: Màu tiêu đề của nút, dạng hexa 7 kí tự.
 
 Tương tự với các nút khác:
 
-Sms: 
+Sms: <code>setColorButtonSmsCharging (…);</code>
 
-<code>setColorButtonSmsCharging (…);</code>
+Sms Plus: <code>setColorButtonSmsPlusCharging (…);</code>
 
-Sms Plus:
-
-<code>setColorButtonSmsPlusCharging (…);</code>
-
-Card:
-
-<code>setColorButtonCardCharging(…);</code>
+Card: <code>setColorButtonCardCharging(…);</code>
 
 Ví dụ thay đổi định dạng nút Sms plus trên màn hình chính:
 

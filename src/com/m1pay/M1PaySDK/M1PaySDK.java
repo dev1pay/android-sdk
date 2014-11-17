@@ -406,12 +406,12 @@ public class M1PaySDK {
 		showViewOptions();
 	}
 
-	public void registerSms() {
+	private void registerSms() {
 		String SENTSMS = "SMS_SENT";
 		messageSentSms = new sentSms(); 
 		context.getApplicationContext().registerReceiver(messageSentSms,new IntentFilter(SENTSMS));
 	}
-	public void registerSmsPlus() {
+	private void registerSmsPlus() {
 		String SENTSMSPLUS = "SMSPLUS_SENT";
 		messageSentSmsPlus = new sentSmsPlus(); 
 		context.getApplicationContext().registerReceiver(messageSentSmsPlus,new IntentFilter(SENTSMSPLUS));
@@ -421,9 +421,6 @@ public class M1PaySDK {
 	private void showViewOptions() {
 		registerSms();
 		registerSmsPlus();
-		//		TelephonyManager tm = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE); 
-		//		String number = tm.getLine1Number();
-		//		Toast.makeText(context, number, Toast.LENGTH_LONG).show();
 		sdk = android.os.Build.VERSION.SDK_INT;
 		final MDialog dialogShowViewOption = new MDialog(this.context);
 		dialogShowViewOption.setTitle(context.getResources().getString(R.string.title_show_view_option), textStyle);
@@ -542,7 +539,19 @@ public class M1PaySDK {
 		if (mCharging.smsPlusCharging == null || !mCharging.smsPlusCharging.status  || !enableButtonSmsPlus || !mCharging.status) {
 			btnSmsPlusCharging.setVisibility(View.GONE);
 		}
-		dialogShowViewOption.setBackButton(null);
+		dialogShowViewOption.setBackButton(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if (messageSentSms != null) {
+					context.getApplicationContext().unregisterReceiver(messageSentSms);
+				}
+				if(messageSentSmsPlus != null){
+					context.getApplicationContext().unregisterReceiver(messageSentSmsPlus);
+				}
+				dialogShowViewOption.dismiss();
+			}
+		});
 		final Spinner splang = (Spinner)layout.findViewById(R.id.spLang);
 		if (mPrefs.contains(SDK_ENABLE_LANG_CHANGE)) {
 			boolean enableLang = mPrefs.getBoolean(SDK_ENABLE_LANG_CHANGE, true);
@@ -645,8 +654,6 @@ public class M1PaySDK {
 						}
 					}
 				}
-
-				//showViewOptions();
 
 			}
 
@@ -1456,8 +1463,6 @@ public class M1PaySDK {
 			@Override
 			public void onClick(View v) {
 				dialogShowSMSCharging.dismiss();
-				context.getApplicationContext().unregisterReceiver(messageSentSms);
-				context.getApplicationContext().unregisterReceiver(messageSentSmsPlus);
 			}
 		});
 		// set help button sms  click

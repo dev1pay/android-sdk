@@ -233,16 +233,23 @@ phần chọn thẻ cào.
 Ví dụ sản phẩm cần tích hợp chỉ chạy thẻ cào Viettel,
 Vinaphone, Gate:
 
-<code>
+```xml
 private M1PaySDKConstant m;
 ...
+
 m = new M1PaySDKConstant();
+
 ArrayList<String> listCard = new ArrayList<String>();
+
 listCard.add(m.TypeCardViettel);
+
 listCard.add(m.TypeCardVinaphone);
+
 listCard.add(m.TypeCardGate);
+
 m1PaySDK.setListTypeCard(listCard);
-</code>
+
+```
 
 <img src="docs/7.png" width = "400"/>&nbsp;
 
@@ -472,5 +479,7 @@ Ví dụ:
 
 <img src="docs/18.png" width = "400"/>&nbsp;
 
-h. Bạn có thể tải bản đầy đủ của tài liệu hướng dẫn tích hợp tại  <a href="docs/document.pdf">đây</a>
+**Tài liệu tích hợp SDK chi t:**
+
+Bạn có thể tải bản đầy đủ của tài liệu hướng dẫn tích hợp tại  <a href="docs/document.pdf"?raw=true>đây</a>
 

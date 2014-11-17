@@ -292,7 +292,7 @@ chuẩn của Android
 Ví dụ:
 m1PaySDK.setColorBackgroundTitle("#721301", "#ffffff", Typeface.defaultFromStyle
 
-<img src="docs/14.png" width = "400" height ="600"/>&nbsp;
+<img src="docs/14.png" width = "400" height ="400"/>&nbsp;
 
 d.Thay đổi định dạng nút thanh toán (màn hình chính)
 setColorButtonCardCharging(màu nền, màu chữ, độ cong viền)

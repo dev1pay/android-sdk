@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mwork.onepaysdk"
+    package="com.m1pay.M1PaySDK"
     android:versionCode="1"
     android:versionName="1.0" >
 

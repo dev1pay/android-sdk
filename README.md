@@ -1,4 +1,5 @@
 **Get Started**
+
 SDK của 1Pay (1PaySDK) là bộ công
 cụ phát triển phần mềm được thiết kế để
 giúp các nhà phát triển (developer) tích
@@ -33,7 +34,7 @@ Demo), chọn sản phẩm cần tích hợp thanh toán để tải thư viện
 hợp thanh toán.
 - Sau đó tiến hành import 1PaySDK-Android vào eclipse.
 
-​2. Cấu hình SDK
+**2. Cấu hình SDK**
 
 2.1. Khởi tạo
 
@@ -59,14 +60,23 @@ Thêm dòng sau:
  private M1PaySDK m1PaySDK;
 2.1.4.Khởi tạo giá trị ban đầu cho biến m1PaySDK
 Tạo hàm loadsConfig1PaySDK(..), trong class khởi chạy dịch vụ.
+
 public void loadsConfig1PaySDK() {
+
 m1PaySDK = new M1PaySDK(this);
+
 … // thêm các câu lệnh để chỉnh sửa 1PaySDK tại đây
+
 m1PaySDK.start(new TransactionCallBack() {
+
 @Override
+
 public void callBack(boolean result, String msg) {
+
 }
+
  });
+
 }
 2.1.5.Gọi hiển thị giao diện thanh toán
 Thêm dòng sau vào sự kiện bấm nút thanh toán
@@ -79,6 +89,7 @@ loadsConfig1PaySDK();
 2.2.1.Thiết lập ban đầu
 
 a.Thay đổi phông chữ
+
 m1PaySDK.setTextStyle(Loại phông chữ)
 Dùng khi muốn thay phông chữ cho giao diện
 thanh toán.
@@ -290,7 +301,9 @@ Màu chữ: Màu chữ trên tiêu đề, dạng màu hexa 7 chữ
 Kiểu chữ đậm nhạt: Quy định kiểu chữ nghiêng/đậm/nhạt cho tiêu đề, theo
 chuẩn của Android
 Ví dụ:
-m1PaySDK.setColorBackgroundTitle("#721301", "#ffffff", Typeface.defaultFromStyle
+
+
+<code>m1PaySDK.setColorBackgroundTitle("#721301", "#ffffff", Typeface.defaultFromStyle</code>
 
 <img src="docs/14.png" width = "800" height ="400"/>&nbsp;
 

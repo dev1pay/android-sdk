@@ -1,0 +1,5 @@
+{
+     "main_background": "#39b54a",
+     "default_language": "vi",
+     "default_payment_method": "sms"
+}

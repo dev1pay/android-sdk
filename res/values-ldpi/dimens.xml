@@ -1,0 +1,6 @@
+<resources>
+
+    <dimen name="padding_log_mdialog_left">80dp</dimen>
+    <dimen name="padding_help_mdialog_left">50dp</dimen>
+<dimen name="fontsize_textview_title">12sp</dimen>
+</resources>

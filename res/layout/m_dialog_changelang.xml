@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:background="@drawable/green_box"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/onpay_bg_title"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="This is a title"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/fontsize_textview_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:padding="10dp"
+        android:singleLine="false"
+        android:text="abc"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/vhorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#959595" />
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/btn_silver"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Cancel"
+            android:textColor="@color/btn_text_color_main"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/vvertical"
+            android:layout_width="2px"
+            android:layout_height="match_parent"
+            android:background="#959595" />
+
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/btn_silver"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Oke"
+            android:textColor="@color/btn_text_color_main"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

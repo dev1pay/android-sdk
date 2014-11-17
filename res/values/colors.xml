@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="onepay_orange">#ffb400</color>
+    <color name="onpay_bg_title">#57c065</color>
+    <color name="btn_text_color">#fff</color>
+    <color name="btn_text_color_main">#949494</color>
+    <color name="green_holo">#33b5e5</color>
+    <color name="onpay_green">#57c065</color>
+    <color name="text_red">#ff0000</color>
+    <color name="btn_silver">#efefef</color>
+
+</resources>

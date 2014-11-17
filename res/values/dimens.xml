@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="stroke">2dp</dimen>
+     <!-- config font text linner layout top m_dialog -->
+    <dimen name="ln_padding_top_account">7dp</dimen>
+    <dimen name="fontsize_game_name">20sp</dimen>
+    <dimen name="account_padding_buttom">3dp</dimen>
+    <dimen name="fontsize_account">16sp</dimen>
+       <!-- end config font text linner layout top m_dialog -->
+</resources>

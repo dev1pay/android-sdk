@@ -1,0 +1,13 @@
+<resources>
+
+    <dimen name="padding_log_mdialog_left">140dp</dimen>
+    <dimen name="padding_help_mdialog_left">90dp</dimen>
+    <!-- config font text linner layout top m_dialog -->
+    <dimen name="ln_padding_top_account">7dp</dimen>
+    <dimen name="fontsize_game_name">24sp</dimen>
+    <dimen name="account_padding_buttom">10dp</dimen>
+    <dimen name="fontsize_account">18sp</dimen>
+    <!-- end config font text linner layout top m_dialog -->
+    <dimen name="fontsize_textview_title">18sp</dimen>
+
+</resources>

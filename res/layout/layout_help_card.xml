@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/tvhelpcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:text="@string/helpcard"
+        android:textStyle="bold" >
+    </TextView>
+
+    <ImageView
+        android:id="@+id/imghelpcard"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:paddingBottom="3dp"
+        android:src="@drawable/imgcard" />
+
+    <TextView
+        android:id="@+id/tvbmot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/help_card_bmot" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvbhai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/help_card_bhai" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvbba"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/help_card_bba" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvbbon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/help_card_bbon" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvbnam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textColor="@color/text_red"
+        android:text="@string/note_card" >
+    </TextView>
+
+      <TextView
+        android:id="@+id/tvbsau"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textColor="@color/text_red"
+        android:text="@string/note_card_tow" >
+    </TextView>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- config font text linner layout top m_dialog -->
+    <dimen name="ln_padding_top_account">5dp</dimen>
+    <dimen name="fontsize_game_name">30sp</dimen>
+    <dimen name="account_padding_buttom">50dp</dimen>
+    <dimen name="fontsize_account">25sp</dimen>
+    <!-- end config font text linner layout top m_dialog -->
+    <dimen name="fontsize_textview_title">27sp</dimen>
+
+</resources>

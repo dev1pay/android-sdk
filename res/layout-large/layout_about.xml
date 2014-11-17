@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/tvaboutmot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hotline"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvabouthai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hotlinemot"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvaboutba"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hotlinehai"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvaboutbon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/aboutsdksuport"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvaboutnam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/telsuport"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvaboutsau"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tel_fax"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvaboutbay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textSize="30sp" />
+
+</LinearLayout>

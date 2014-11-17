@@ -1,0 +1,15 @@
+<resources>
+
+    <dimen name="padding_log_mdialog_left">130dp</dimen>
+    <dimen name="padding_help_mdialog_left">60dp</dimen>
+    <dimen name="padding_log_mdialog_left_land">130dp</dimen>
+    <dimen name="padding_help_mdialog_left_land">70dp</dimen>
+    <!-- config font text linner layout top m_dialog -->
+    <dimen name="ln_padding_top_account">5dp</dimen>
+    <dimen name="fontsize_game_name">20sp</dimen>
+    <dimen name="account_padding_buttom">7dp</dimen>
+    <dimen name="fontsize_account">15sp</dimen>
+    <!-- end config font text linner layout top m_dialog -->
+    <dimen name="fontsize_textview_title">16sp</dimen>
+
+</resources>

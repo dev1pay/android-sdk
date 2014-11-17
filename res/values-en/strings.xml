@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="cdd">Card a</string>
+    <string name="one_pay">1Pay</string>
+    <string name="action_settings">Settings</string>
+    <string name="enter_card_number">Enter Code</string>
+    <string name="enter_card_serial">Enter serial</string>
+    <string name="title_show_view_option">CHOOSE PAYMENT METHOD</string>
+    <string name="vietnamese">Tiếng Việt</string>
+    <string name="english">English</string>
+    <string name="send">Send</string>
+    <string name="cancel">Hủy</string>
+    <string name="oke">Đồng ý</string>
+    <string name="titlelang">Đổi ngôn ngữ</string>
+    <string name="contentlang">Đổi ngôn ngữ cần phải bật lại hình thức thanh toán.\nBạn có chắc chắn muốn đổi?</string>
+    <string name="payment">Payment</string>
+    <string name="charging">Charing...</string>
+    <string name="card_charging">Cards</string>
+    <string name="subscription">Subscription</string>
+    <string name="sms_charging">Messages SMS</string>
+    <string name="sms_please_wait">Please wait, for the message being processed</string>
+    <string name="smsplus_charging">Messages SMSplus</string>
+    <string name="sms_not_delivered">SMS not delivered</string>
+    <string name="swap_charging">Direct Payment</string>
+    <string name="init_config">The lastest configuration loading...</string>
+    <string name="choose_price">(Choose Price)</string>
+    <string name="choose_card_type"> (Choose card type)</string>
+    <string name="sim_card_no_support">Your sim card does not support, only support: </string>
+    <string name="wap_warning"><b>Note:</b> Require 3G/GPRS connection for this transaction</string>
+    <string name="currency_exchange_rate" formatted="false">Currency exchange rate:\n%s VND = %s %s</string>
+    <string name="get_data_error">Getting data failed, try again</string>
+    <string name="tran_success">Transaction succeed</string>
+    <string name="tran_failed">Transaction failed</string>
+    <string name="title_m_dialog_notify">Notify</string>
+    <string name="sms_sent">SMS has been sent</string>
+    <string name="sms_noservice">Do not have a network service</string>
+    <string name="money_sms">You have to choose the options of money to apply</string>
+    <string name="err_enter_card">please supply your scratch card code, type and serial numbers</string>
+    <string name="network_warning"><b>Note:</b> Require 3G or Wifi connection for this transaction!<br>Please try again</br></string>
+    <string name="network_warning_type_mobile"> Require 3G/GPRS connection for this transaction!<br>Please try again</br></string>
+    <string name="load_data_err">Failed to download data</string>
+    <string name="this_is_a_title">This is a title</string>
+    <string name="errornopayment">Currently there are no suitable payment method</string>
+
+    <string-array name="card_type">
+        <item>(Choose card type)</item>
+        <item>VIETTEL</item>
+        <item>MOBIFONE</item>
+        <item>VINAPHONE</item>
+    </string-array>
+    <string-array name="map_shortcodes">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="prices">
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+    </string-array>
+    <!-- thong tin lien he -->
+    <string name="hotline"><b>Hotline:</b></string>
+    <string name="hotlinemot">(+84) 90 4669933 </string>
+    <string name="hotlinehai">(+84) 90 4253125</string>
+    <string name="telsuport">(+84) 96 4222628</string>
+    <string name="title_about"><b>Contact Information</b></string>
+    <string name="aboutsdksuport"><b>Customer Care:</b></string>
+    <string name="tel_fax"><b>Tel/Fax:</b>(+84) 4 364 066 27</string>
+    <string name="email"><b>Email:</b> info@1pay.vn</string>
+    <!-- hướng dẫn nạp tiền bằng card -->
+    <string name="helpcard">Guide scratch card deposits</string>
+    <string name="help_card_bmot"><b>Bước 1:</b> choose a card in the box (select tag name) </string>
+    <string name="help_card_bhai"><b>Bước 2:</b> enter the serial number (the part circled in blue)</string>
+    <string name="help_card_bba"><b>Bước 3:</b>enter pin number below grade silver (part delineated in red)</string>
+    <string name="help_card_bbon"><b>Bước 4:</b> you select <b> "Checkout" </b> to proceed recharge or select <b> "arrow back" </b> to cancel the card loaded</string>
+    <string name="note_card"><b> Note:</b>You must enable 3G or Wi-Fi to use this form of recharge</string>
+    <string name="note_card_tow">Battery serial number and enter the letters and numbers only, not written by or special characters</string>
+    <!-- hướng dẫn nạp tiền bằng iac -->
+    <string name="help_iac">Guide deposits via SMS Plus</string>
+    <string name="help_iac_bmot"><b>Step 1:</b> you click in the box choose the amount to load</string>
+    <string name="help_iac_bhai"><b>Step 2:</b> then when you need to input the amount, you choose <b>"  Payment  "</b> to conduct recharge or select <b>" Arrow back "</b> to cancel plush recharge via sms  </string> <!-- hướng dẫn nạp tiền bằng sms -->
+    <string name="help_sms">Guide recharge by SMS</string>
+    <string name="help_sms_bmot"><b>Step 1:</b> you click in the box choose the amount to load</string>
+    <string name="help_sms_bhai"><b>Step 2:</b> then when you need to input the amount, you choose <b>"  Payment  "</b> to conduct recharge or select <b>" Arrow back "</b> to cancel recharge via sms  </string>
+
+</resources>

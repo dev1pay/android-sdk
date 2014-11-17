@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:id="@+id/idmain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="0dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <Button
+                android:id="@+id/btnCardCharging"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_silver"
+                android:drawableLeft="@drawable/card"
+                android:drawablePadding="3dp"
+                android:gravity="left"
+                android:minHeight="0dp"
+                android:text="@string/card_charging"
+                android:textColor="@color/btn_text_color_main" />
+
+            <Button
+                android:id="@+id/btnSMSCharging"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_silver"
+                android:drawableLeft="@drawable/sms"
+                android:gravity="left"
+                android:minHeight="0dp"
+                android:text="@string/sms_charging"
+                android:textColor="@color/btn_text_color_main" />
+
+            <Button
+                android:id="@+id/btnSmsPlusCharging"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_silver"
+                android:drawableLeft="@drawable/smsplus"
+                android:gravity="left"
+                android:minHeight="0dp"
+                android:text="@string/smsplus_charging"
+                android:textColor="@color/btn_text_color_main" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Spinner
+                android:id="@+id/spLang"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" />
+
+            <ImageView
+                android:id="@+id/img_one_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="right"
+                android:paddingRight="10dp"
+                android:src="@drawable/onepay_logo" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

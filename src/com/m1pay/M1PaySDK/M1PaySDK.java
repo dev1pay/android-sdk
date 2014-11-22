@@ -23,6 +23,7 @@ import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.telephony.SmsManager;
+import android.text.Html;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -70,8 +71,6 @@ public class M1PaySDK {
 
 	private final String SDK_LANG_UPDATE = "sdk_lang_update";
 
-	private final String SDK_LANG_POSITION = "sdk_position";
-
 	private final String SDK_hexSolidColor = "hexSolidColor";
 
 	private final String SDK_hexBoundColor = "hexBoundColor";
@@ -87,10 +86,6 @@ public class M1PaySDK {
 	private final String ENGLISH = "en_US";
 
 	private final String SDK_ENABLE_LANG_CHANGE = "sdk_enable_lang_change";
-
-	private final String CALLBACK_URL = "callback://";
-
-	private final String ERROR_URL = "error://";
 
 	private Context context;
 
@@ -116,15 +111,13 @@ public class M1PaySDK {
 
 	private Typeface textStyle, typefaceStyleTitleShowPayment;
 
-	private int typefaceStyle;
-
 	private String titlePayment, accountName, appName;
 
 	private String backgroundColorBtnPayment, textColorBtnPayment;
 
 	private String backgroundColorTitle, colorTextTitleShowPayment;
 
-	private float cornerRadiusCard, cornerRadiusSms, cornerRadiusSmsPlus, cornerRadiusCancel, cornerRadiusPayment;
+	private float cornerRadiusCard, cornerRadiusSms, cornerRadiusSmsPlus, cornerRadiusPayment;
 
 	private String hexSolidColorMainBackground;
 
@@ -134,11 +127,11 @@ public class M1PaySDK {
 
 	private ArrayList<String> listPricesSms, listPricesSmsPlus, listTypeCard;
 
-	private boolean enableCard = true, enableHelpCard = false;
+	private boolean enableCard = true;
 
-	private boolean enableSms = true, enableHelpSms = false;
+	private boolean enableSms = true;
 
-	private boolean enableSmsPlus = true, enableHelpSmsPlus = false;
+	private boolean enableSmsPlus = true;
 
 	private View contentViewHelpCard, contentViewCard;
 
@@ -149,8 +142,6 @@ public class M1PaySDK {
 	private String type, selectItemPriceSms, selectItemPriceSmsPlus;
 
 	private BroadcastReceiver messageSentSms, messageSentSmsPlus;
-
-	private String errorNoPayment;
 
 	/**
 	 * Create M1PaySDK
@@ -784,14 +775,14 @@ public class M1PaySDK {
 			tvPaymentNote.setVisibility(View.VISIBLE);
 			String str = context.getString(R.string.currency_exchange_rate, "1000",
 					exchangeRateByCard, exchangeUnit);
-			tvPaymentNote.setText(str);
+			tvPaymentNote.setText(Html.fromHtml(str));
 			if (textStyle != null) {
 				tvPaymentNote.setTypeface(textStyle);		
 			}
 			tvPaymentNote.setTextColor(Color.parseColor(colorTvPaymentNote));
 		}else if (!mCharging.description.equals("null") && enablePaymentNote == true) {
 			tvPaymentNote.setVisibility(View.VISIBLE);
-			tvPaymentNote.setText(mCharging.description);
+			tvPaymentNote.setText(Html.fromHtml(mCharging.description));
 			if (textStyle != null) {
 				tvPaymentNote.setTypeface(textStyle);		
 			}
@@ -1183,7 +1174,7 @@ public class M1PaySDK {
 							str = context.getString(R.string.currency_exchange_rate, price,
 									exchangeRateBySmsPlus * price / 1000, exchangeUnit);
 						}
-						tvPaymentNote.setText(str);
+						tvPaymentNote.setText(Html.fromHtml(str));
 						tvPaymentNote.setTextColor(Color.parseColor(colorTvPaymentNote));
 						if (textStyle != null) {
 							tvPaymentNote.setTypeface(textStyle);
@@ -1191,7 +1182,7 @@ public class M1PaySDK {
 					}
 					else if (!mCharging.description.equals("null") && enablePaymentNote == true) {
 						tvPaymentNote.setVisibility(View.VISIBLE);
-						tvPaymentNote.setText(mCharging.description);
+						tvPaymentNote.setText(Html.fromHtml(mCharging.description));
 						if (textStyle != null) {
 							tvPaymentNote.setTypeface(textStyle);
 						}
@@ -1386,14 +1377,14 @@ public class M1PaySDK {
 						str = context.getString(R.string.currency_exchange_rate, price,
 								exchangeRateBySms * price / 1000, exchangeUnit);
 					}
-					tvPaymentNote.setText(str);
+					tvPaymentNote.setText(Html.fromHtml(str));
 					tvPaymentNote.setTextColor(Color.parseColor(colorTvPaymentNote));
 					if (textStyle != null) {
 						tvPaymentNote.setTypeface(textStyle);
 					}
 				}else if (!mCharging.description.equals("null") && enablePaymentNote == true) {
 					tvPaymentNote.setVisibility(View.VISIBLE);
-					tvPaymentNote.setText(mCharging.description);
+					tvPaymentNote.setText(Html.fromHtml(mCharging.description));
 					tvPaymentNote.setTextColor(Color.parseColor(colorTvPaymentNote));
 					if (textStyle != null) {
 						tvPaymentNote.setTypeface(textStyle);
@@ -1618,7 +1609,7 @@ public class M1PaySDK {
 			Log.e(M1PaySDK.class.getName(), "" + e.getMessage());
 		}
 	}
-	public void showDialogSentSms(String title, String content) {
+	private void showDialogSentSms(String title, String content) {
 		final MDialogNotify dialognt = new MDialogNotify(context);
 		dialognt.setTitle(title, textStyle);
 		dialognt.setContent(content, textStyle);

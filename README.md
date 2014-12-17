@@ -77,7 +77,7 @@ public void onPucharListener(String charging, String data) {
 		// với Sms và SmsPlus thì có các key như sau:
 	 		//- phoneNumber: số điện thoại nhắn tin lên:
 			//- contentMessage: nội dung tin nhắn:
-	 		//- price: mệnh giá nt:
+	 		//- price: mệnh giá nhắn tin:
 	}
 }
 ```

@@ -93,7 +93,7 @@ Tạo hàm loadsConfig1PaySDK(..), trong class khởi chạy dịch vụ.
 public void loadsConfig1PaySDK() {
 
 m1PaySDK = new M1PaySDK(this);
-
+mOnePaySDK.setListener(this);
 … // thêm các câu lệnh để chỉnh sửa 1PaySDK tại đây
 
 m1PaySDK.start(new TransactionCallBack() {

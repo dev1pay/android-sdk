@@ -58,28 +58,29 @@ Copy các dòng sau vào file AndroidManifest.xml:
 
 Trong class khởi chạy hình thức thanh toán. Nếu muốn lấy thông tin của 1 giao dịch khi end user
 sử dụng thanh toán thông qua giao diện 1PaySDK-Android thì implements M1PaySDKListener.
-ví dụ 
-<code>public class Youractiviy extends Activity implements M1PaySDKListener{</code>
-<code>@Override</code>
-<code>public void onPucharListener(String charging, String data) {</code>
-	<code>//Trong đó: </code>
-	<code>// + charging là hình thức thanh toán có thể là: Card, Sms, SmsPlus</code>
-	<code>// + data là 1 chuỗi string json ứng với từng hình thức thanh toán:</code>
-	<code>	// với Card thì có các key như sau:</code>
-	<code>		//- type: loại thẻ cào </code>
-	<code> 		//- serial: serial của thẻ</code>
-	<code> 		//- pin: mã thẻ</code>
-	<code> 		//- message: Thông báo tương ứng với trạng thái của thẻ được 1pay gửi về</code>
-	<code> 		//- amount: mệnh giá thẻ</code>
-	<code> 		//- status: mã trạng thái của thẻ trả về.</code>
+ví dụ
+```xml 
+public class Youractiviy extends Activity implements M1PaySDKListener{
+@Override
+public void onPucharListener(String charging, String data) {
+	//Trong đó:
+	// + charging là hình thức thanh toán có thể là: Card, Sms, SmsPlus</code>
+	// + data là 1 chuỗi string json ứng với từng hình thức thanh toán:</code>
+		// với Card thì có các key như sau:
+			//- type: loại thẻ cào 
+			//- serial: serial của thẻ
+			//- pin: mã thẻ
+			//- message: Thông báo tương ứng với trạng thái của thẻ được 1pay gửi về
+	 		//- amount: mệnh giá thẻ
+	 		//- status: mã trạng thái của thẻ trả về.
 
-	<code>	// với Sms và SmsPlus thì có các key như sau:</code>
-	<code> 		//- phoneNumber: số điện thoại nhắn tin lên: </code>
-	<code> 		//- contentMessage: nội dung tin nhắn: </code>
-	<code> 		//- price: mệnh giá nt:</code>
-<code>}</code>
-<code>}</code>
-
+		// với Sms và SmsPlus thì có các key như sau:
+	 		//- phoneNumber: số điện thoại nhắn tin lên:
+			//- contentMessage: nội dung tin nhắn:
+	 		//- price: mệnh giá nt:
+}
+}
+```
 Thêm dòng sau:
 
 <code>private M1PaySDK m1PaySDK;</code>

@@ -64,8 +64,8 @@ public class Youractiviy extends Activity implements M1PaySDKListener{
 @Override
 public void onPucharListener(String charging, String data) {
 	//Trong đó:
-	// + charging là hình thức thanh toán có thể là: Card, Sms, SmsPlus</code>
-	// + data là 1 chuỗi string json ứng với từng hình thức thanh toán:</code>
+	// + charging là hình thức thanh toán có thể là: Card, Sms, SmsPlus
+	// + data là 1 chuỗi string json ứng với từng hình thức thanh toán:
 		// với Card thì có các key như sau:
 			//- type: loại thẻ cào 
 			//- serial: serial của thẻ
@@ -78,7 +78,7 @@ public void onPucharListener(String charging, String data) {
 	 		//- phoneNumber: số điện thoại nhắn tin lên:
 			//- contentMessage: nội dung tin nhắn:
 	 		//- price: mệnh giá nt:
-}
+	}
 }
 ```
 Thêm dòng sau:

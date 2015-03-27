@@ -1,3 +1,5 @@
+Ngôn ngữ khác: [Vietnamese](README.md) | [English](README_EN.md)
+
 **Get Started**
 
 SDK của 1Pay (1PaySDK) là bộ công cụ phát triển phần mềm được thiết kế để
@@ -201,7 +203,7 @@ Ví dụ:
 
 2.2.2.Thiết lập ngôn ngữ
 
-b.Bật/tắt chuyển ngữ
+a.Bật/tắt chuyển ngữ
 
 <code>setEnableLangueChange(Lựa chọn)</code>
 
@@ -213,7 +215,7 @@ Ví dụ:
 
 <code>m1PaySDK.setEnableLangueChange(false);</code>
 
-a.Thiết lập ngôn ngữ mặc định
+b.Thiết lập ngôn ngữ mặc định
 
 <code>m1PaySDK.setLanguage(Ngôn ngữ)</code>
 

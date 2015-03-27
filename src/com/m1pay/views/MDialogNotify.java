@@ -1,4 +1,3 @@
-
 package com.m1pay.views;
 
 import java.io.IOException;

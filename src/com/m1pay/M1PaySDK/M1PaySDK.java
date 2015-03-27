@@ -21,6 +21,7 @@ import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.os.StrictMode;
 import android.telephony.SmsManager;
 import android.text.Html;
@@ -39,6 +40,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.m1pay.configBackGround.SetBackGroundOnepay;
 import com.m1pay.libsNetworks.HttpHelper;
 import com.m1pay.libsNetworks.NetworkUtils;
@@ -47,20 +49,26 @@ import com.m1pay.m1payApiLibs.QueryBuilder;
 import com.m1pay.m1payApiLibs.Utils;
 import com.m1pay.models.Carrier;
 import com.m1pay.models.Charging;
+import com.m1pay.models.Charging.StatusCode;
 import com.m1pay.models.ItemTypeCard;
 import com.m1pay.models.ItemTypeSms;
 import com.m1pay.models.ItemTypeSmsPlus;
 import com.m1pay.models.Language;
 import com.m1pay.models.LanguageAdapter;
+import com.m1pay.models.ObjSms;
 import com.m1pay.models.SmsAdapter;
 import com.m1pay.models.SmsPlusAdapter;
 import com.m1pay.models.TypeAdapter;
-import com.m1pay.models.Charging.StatusCode;
+import com.m1pay.models.ObjCard;
 import com.m1pay.views.MDialog;
 import com.m1pay.views.MDialogAbout;
 import com.m1pay.views.MDialogChangeLang;
 import com.m1pay.views.MDialogNotify;
-public class M1PaySDK {
+public class M1PaySDK implements M1PaySDKListener{
+	private M1PaySDKListener listener = this;
+	
+	private Handler handler;
+	
 	private final String SDK_PREFERENCE = "1pay_sdk_prefs";
 
 	private final String SDK_PREFERENCE_CONFIG = "1pay_sdk_prefs_config";
@@ -70,6 +78,8 @@ public class M1PaySDK {
 	private final String SDK_LANG = "sdk_lang";
 
 	private final String SDK_LANG_UPDATE = "sdk_lang_update";
+
+	private final String SDK_LANG_POSITION = "sdk_position";
 
 	private final String SDK_hexSolidColor = "hexSolidColor";
 
@@ -86,6 +96,10 @@ public class M1PaySDK {
 	private final String ENGLISH = "en_US";
 
 	private final String SDK_ENABLE_LANG_CHANGE = "sdk_enable_lang_change";
+
+	private final String CALLBACK_URL = "callback://";
+
+	private final String ERROR_URL = "error://";
 
 	private Context context;
 
@@ -158,6 +172,7 @@ public class M1PaySDK {
 		}
 
 		this.context = context;
+		handler = new Handler();
 		mPrefs = (SharedPreferences) context.getSharedPreferences(SDK_PREFERENCE,
 				Context.MODE_PRIVATE);
 		mPrefsConfig = (SharedPreferences) context.getSharedPreferences(SDK_PREFERENCE_CONFIG,
@@ -180,7 +195,6 @@ public class M1PaySDK {
 		//Auto load new config from server
 		loadConfigFromServer();
 	}
-
 	//TODO
 	public void initTheme(String hexSolidColorMain, String hexBoundColorMain, String hexTextColor, int connerRadiusMain, int strokeWidthMain) {
 		Editor editor = mPrefsConfig.edit();
@@ -430,7 +444,7 @@ public class M1PaySDK {
 		dialogShowViewOption.setCancelable(true);
 
 		final View layout = LayoutInflater.from(context).inflate(R.layout.onpay_main_layout, null);
-		if (!mCharging.status || !mCharging.smsCharging.status && !mCharging.smsPlusCharging.status && !mCharging.cardCharging.status || !enableButtonCard && !enableButtonSms && !enableButtonSmsPlus) {
+		if (!mCharging.status || !enableButtonCard && !enableButtonSms && !enableButtonSmsPlus) {
 			dialogShowViewOption.setContent(context.getResources().getString(R.string.errornopayment));
 		}else{
 			dialogShowViewOption.setContentLayout(layout);
@@ -882,7 +896,7 @@ public class M1PaySDK {
 
 								@Override
 								public void onClick(View v) {	
-									NetworkUtils.setMobileDataEnabled(context, true);
+								//	NetworkUtils.setMobileDataEnabled(context, true);
 									dialogErrNetWork.dismiss();
 								}
 							});      
@@ -1003,7 +1017,7 @@ public class M1PaySDK {
 		qBuilder.put("pin", pin);
 		qBuilder.put("serial", serial);
 		String queryStr = qBuilder.getQueryString();
-		new CardChargingTask().execute(queryStr);
+		new CardChargingTask().execute(queryStr, pin , type, serial);
 	}
 
 	private class CardChargingTask extends AsyncTask<String, Void, String> {
@@ -1024,10 +1038,30 @@ public class M1PaySDK {
 		@Override
 		protected String doInBackground(String... params) {
 			String queryStr = params[0];
-			// post
-			//String responseStr = HttpHelper.post(APIs.CARD_CHARGING,queryStr); 
-			//get 
+			String pin = params[1];
+			String type = params[2];
+			String serial = params[3];
 			String responseStr = HttpHelper.getData(APIs.CARD_CHARGING+queryStr);
+			try{
+			JSONObject jObject = new JSONObject(responseStr);
+			String status = jObject.getString("status");
+			String amount = jObject.getString("amount");
+			String message = jObject.getString("description");
+			ObjCard card = new ObjCard(type, serial, pin, message, amount, status);
+			Gson gson = new Gson();
+			final String data = gson.toJson(card);
+			handler.post(new Runnable() {
+				
+				@Override
+				public void run() {
+					listener.onPucharListener("Card", data);
+				}
+			});
+			
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
 			return responseStr;
 		}
 
@@ -1254,7 +1288,7 @@ public class M1PaySDK {
 					String contentSMS = sms.replace("$PRICE", ""+pric).replace("$THONGTINKHAC",exchangeOtherInformationSmsPlus);
 					//+" "+UUID.randomUUID().toString()
 					String shortCode = mCharging.smsPlusCharging.service_number;
-					startSmsPlusCharging(context,contentSMS,shortCode);// start sms charging
+					startSmsPlusCharging(context,contentSMS,shortCode, priceSmsPlus);// start sms charging
 					//	Log.e(" smsplus ", contentSMS  + "   dau so" + shortCode);
 					dialogShowSmsPlusCharging.dismiss();
 				}else {
@@ -1418,7 +1452,7 @@ public class M1PaySDK {
 						shortCode = shortCodes[pos - 1];
 					}
 					String contentSMS = mCharging.smsCharging.command+" "+exchangeOtherInformationSms;
-					startSmsCharging(context, contentSMS, shortCode);// start sms charging
+					startSmsCharging(context, contentSMS, shortCode, selectItemPriceSms.replace(" VND", ""));// start sms charging
 					//Log.e("tin nhan sms", contentSMS + " dau so: "+ shortCode);
 					dialogShowSMSCharging.dismiss();
 				}else {
@@ -1479,7 +1513,7 @@ public class M1PaySDK {
 		sendIntent.setType("vnd.android-dir/mms-sms");
 		context.startActivity(sendIntent);
 	}
-	private void startSmsCharging(final Context context ,final String message, final String phoneNumber) {
+	private void startSmsCharging(final Context context ,final String message, final String phoneNumber, final String price) {
 		try {
 			String SENT = "SMS_SENT";
 			String title = null;
@@ -1490,6 +1524,9 @@ public class M1PaySDK {
 			}
 			Intent i = new Intent(SENT);
 			i.putExtra("titleSms", title);
+			i.putExtra("message", message);
+			i.putExtra("phoneNumber", phoneNumber);
+			i.putExtra("price", price);
 			PendingIntent sentPI = PendingIntent.getBroadcast(context, 0, i, 0);
 			//			PendingIntent deliveredPI = PendingIntent.getBroadcast(context, 0,new Intent(DELIVERED), 0);
 			SmsManager sms = SmsManager.getDefault();
@@ -1499,7 +1536,7 @@ public class M1PaySDK {
 		}
 	}
 
-	private void startSmsPlusCharging(final Context context ,final String message, final String phoneNumber) {
+	private void startSmsPlusCharging(final Context context ,final String message, final String phoneNumber, final String price) {
 		try {
 			String SENTSMSPLUS = "SMSPLUS_SENT";
 			String title = null;
@@ -1510,6 +1547,9 @@ public class M1PaySDK {
 			}
 			Intent i = new Intent(SENTSMSPLUS);
 			i.putExtra("titleSmsPlus", title);
+			i.putExtra("message", message);
+			i.putExtra("phoneNumber", phoneNumber);
+			i.putExtra("price", price);
 			PendingIntent sentPI = PendingIntent.getBroadcast(context, 0, i, 0);
 			SmsManager sms = SmsManager.getDefault();
 			sms.sendTextMessage(phoneNumber, null, message, sentPI, null);
@@ -1631,11 +1671,23 @@ public class M1PaySDK {
 		public void onReceive(Context ctx, Intent intent) {
 			try {
 				String title = new String(intent.getStringExtra("titleSms"));
+				String contentMessage = new String(intent.getStringExtra("message"));
+				String phoneNumber  = new String(intent.getStringExtra("phoneNumber"));
+				String price  = new String(intent.getStringExtra("price"));
+				ObjSms objSms = new ObjSms(phoneNumber, contentMessage, price);
+				Gson gson = new Gson();
+				final String data = gson.toJson(objSms);
 				switch (getResultCode())
 				{
 				case Activity.RESULT_OK:
 					String contentSent = context.getResources().getString(R.string.sms_sent);
 					showDialogSentSms(title,contentSent);
+					handler.post(new Runnable() {
+						@Override
+						public void run() {
+							listener.onPucharListener("Sms", data);
+						}
+					});
 					break;
 				case SmsManager.RESULT_ERROR_NO_SERVICE:
 					String contentNoService = context.getResources().getString(R.string.sms_noservice);
@@ -1653,11 +1705,23 @@ public class M1PaySDK {
 		public void onReceive(Context ctx, Intent intent) {
 			try {
 				String title = new String(intent.getStringExtra("titleSmsPlus"));
+				String contentMessage = new String(intent.getStringExtra("message"));
+				String phoneNumber  = new String(intent.getStringExtra("phoneNumber"));
+				String price  = new String(intent.getStringExtra("price"));
+				ObjSms objSms = new ObjSms(phoneNumber, contentMessage, price);
+				Gson gson = new Gson();
+				final String data = gson.toJson(objSms);
 				switch (getResultCode())
 				{
 				case Activity.RESULT_OK:
 					String contentSent = context.getResources().getString(R.string.sms_sent);
 					showDialogSentSms(title,contentSent);
+					handler.post(new Runnable() {
+						@Override
+						public void run() {
+							listener.onPucharListener("SmsPlus", data);
+						}
+					});
 					break;
 				case SmsManager.RESULT_ERROR_NO_SERVICE:
 					String contentNoService = context.getResources().getString(R.string.sms_noservice);
@@ -1669,5 +1733,14 @@ public class M1PaySDK {
 			}
 		}
 
+	}
+
+	public void setListener(M1PaySDKListener listener) {
+		this.listener = listener;
+	}
+	
+	@Override
+	public void onPucharListener(String charging, String data) {
+		
 	}
 }

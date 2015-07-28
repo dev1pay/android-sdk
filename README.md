@@ -20,17 +20,14 @@ chơi, ứng dụng,…).
 
 - Đăng nhập trang http://1pay.vn, vào “Quản trị sản phẩm” để xem thông tin sản phẩm
 cần tích hợp các hình thức thanh toán.
-
 	Lưu ý: Các hình thức thanh toán(httt) của sản phẩm đã được xác nhận (màu xanh) sẽ hiển thị trong 1PaySDK.
 Trong quá trình phát triển kinh doanh, nếu merchant bổ sung hình thức thanh toán thì merchant chỉ cần được
 1Pay xác nhận httt mới là có thể sử dụng.
-
-- Tải thư viện 1PaySDK-Android.zip tại nút "Download ZIP" (dưới cùng tại menu bên phải màn hình). Thay thế file res/raw/charging_config.txt bằng cách vào sản phẩm cần gán SDK lấy access key, gán giá trị vào link (sau dấu =) http://api.1pay.vn/smsgw/application/charging/config?access_key= và lưu giá trị mới file charging_config.txt.
-
+- Tải thư viện 1PaySDK-Android.zip tại nút "Download ZIP" (dưới cùng tại menu bên phải màn hình)
 - Giải nén thư mục 1PaySDK vào cùng thư mục chứa source code của sản phẩm cần tích
 hợp thanh toán.
-
 - Sau đó tiến hành import 1PaySDK-Android vào eclipse.
+- Thay nội dung file res/raw/charging_config.txt bằng cách vào sản phẩm cần gán SDK lấy access key, gán giá trị vào link (sau dấu =) http://api.1pay.vn/smsgw/application/charging/config?access_key= và lưu giá trị mới file charging_config.txt.
 
 **2. Cấu hình SDK**
 

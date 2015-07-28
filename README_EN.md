@@ -15,14 +15,17 @@ to quickly integrate the payment gateway into their products (games, application
 
 **1. Download and import SDK into project**
 
-	- Log in http://1pay.vn, click "Product Management" and view the information of product which
-	 need to be integrated with payment methods.
-	Note: Activated payment services (green) are displayed in 1PaySDK.
-	If merchant add more services, they just need the confirmation of 1Pay to be used.
-	- Go to https://github.com/dev1pay/android-sdk. Download library 1PaySDK-Android.zip at the button "Download ZIP" (at the bottom of Menu - at the right of the screen).
-	- Unzip 1PaySDK folder into the folder containing source code of your product.
-	- Then import 1PaySDK-Android into the eclipse.
-	- Replace value res/raw/charging_config.txt by clicking product which need to be assigned SDK to take acesskey, assign value into the link (after signal =) http://api.1pay.vn/smsgw/application/charging/config?access_key=  and save new value in charging_config.txt.
+- Log in http://1pay.vn, click "Product Management" and view the information of product which need to be integrated with payment methods.
+
+Note: Activated payment services (green) are displayed in 1PaySDK. If merchant add more services, they just need the confirmation of 1Pay to be used.
+
+- Go to https://github.com/dev1pay/android-sdk. Download library 1PaySDK-Android.zip at the button "Download ZIP" (at the bottom of Menu - at the right of the screen).
+
+- Unzip 1PaySDK folder into the folder containing source code of your product.
+
+- Then import 1PaySDK-Android into the eclipse.
+
+- Replace value res/raw/charging_config.txt by clicking product which need to be assigned SDK to take acesskey, assign value into the link (after signal =) http://api.1pay.vn/smsgw/application/charging/config?access_key=  and save new value in charging_config.txt.
 
 **2. Configure SDK**
 
